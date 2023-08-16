@@ -1,0 +1,48 @@
+<div class="user-form container">
+  <button routerLink="/user" class="btn btn-primary">Listar Usuarios</button>
+  <h2>Crear Usuario</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Nombres:</label>
+        <input type="text" class="form-control" formControlName="nombres" />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Apellidos:</label>
+        <input type="text" class="form-control" formControlName="apellidos" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Fecha de Nacimiento:</label>
+        <input type="date" class="form-control" formControlName="fechaNacimiento" />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Email:</label>
+        <input type="email" class="form-control" formControlName="email" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Número de Documento:</label>
+        <input type="text" class="form-control" formControlName="numeroDocumento" />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Salario:</label>
+        <input type="text" class="form-control" formControlName="salario" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Estado:</label>
+        <select class="form-control" formControlName="estado">
+          <option value="Activo">Activo</option>
+          <option value="Inactivo">Inactivo</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-buttons">
+      <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</div>

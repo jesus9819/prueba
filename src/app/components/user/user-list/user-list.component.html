@@ -1,0 +1,26 @@
+<h2>User List</h2>
+<button routerLink="/create-user" class="btn btn-primary">Create User</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Document Number</th>
+      <th>Salary</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.nombres && user.apellidos }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.numeroDocumento }}</td>
+      <td>{{ user.salario }}</td>
+      <td>
+        <button (click)="deleteUser(user)">Delete</button>
+        <button (click)="updateUser(user)">Edit</button>
+        <!-- Add more buttons or links for other actions -->
+      </td>
+    </tr>
+  </tbody>
+</table>
